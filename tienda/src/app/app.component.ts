@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ListaDeProductosComponent } from './lista-de-productos/lista-de-productos.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { ProductAlertComponent } from './product-alerts/product-alert.component';
+import { ListaDeProductosComponent } from './components/lista-de-productos/lista-de-productos.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { ProductAlertComponent } from './components/product-alerts/product-alert.component';
 
 @Component({
   selector: 'app-root',
