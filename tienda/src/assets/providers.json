@@ -1,0 +1,29 @@
+
+     [
+        {
+            "name": "Samsung",
+            "country": "Corea del Sur",
+            "nif": "A12345678"
+
+        },
+        {
+            "name": "Apple",
+            "country": "Estados Unidos",
+            "nif":"B12345678"
+        },
+        {
+            "name": "Xiaomi",
+            "country": "China",
+            "nif":"C12345678"
+        },
+        {
+            "name": "Huawei",
+            "country": "China",
+            "nif":"D12345678"
+        },
+        {
+            "name":"Google",
+            "country":"Estados Unidos",
+            "nif":"E12345678"
+        }
+    ]

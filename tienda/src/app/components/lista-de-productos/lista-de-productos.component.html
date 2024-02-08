@@ -1,4 +1,4 @@
-<img (click)="greet()" alt="photo" src="https://github.com/emi-ms.png" />
+
 <div id="products-container">
     <h2>Products</h2>
     <!-- 
@@ -10,9 +10,7 @@
     <h3>
         <a 
         [title]="product.name + ' details'" 
-        [routerLink]="['/products', product.id]"
-    
-        >
+        [routerLink]="['/products', product.id]">
 
             {{ product.name }}
         </a>

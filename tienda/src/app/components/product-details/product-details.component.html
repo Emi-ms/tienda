@@ -1,1 +1,13 @@
-<p>product-details works!</p>
+<div id="product-detail-container">
+<h2>Product Details</h2>
+
+@if(product){
+    <div>
+        <h3>{{ product.name }}</h3>
+        <h4>{{ product.price | currency}}</h4>
+        <p>{{ product.description }}</p>
+        <button (click)="addToCart(product)">Buy</button><br><br>
+        <button [routerLink]="['/providers',product.provider]">Provider {{product.provider}}</button>
+    </div>
+}
+</div>
