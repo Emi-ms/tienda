@@ -156,6 +156,11 @@
     
 
   }
+
+  #photo-mobile{
+  width: 150px;
+  height: 150px;
+  }
   /*
   Copyright Google LLC. All Rights Reserved.
   Use of this source code is governed by an MIT-style license that

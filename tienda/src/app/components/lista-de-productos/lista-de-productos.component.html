@@ -13,7 +13,8 @@
         [routerLink]="['/products', product.id]">
 
             {{ product.name }}
-        </a>
+        </a></h3>
+        <img id="photo-mobile" src="{{product.photo}}"/>
 
         @if(product.description){
         <p>{{ product.description }}</p>
@@ -28,7 +29,7 @@
         <app-product-alerts 
         [product]="product"
         (notify)="onNotify()"></app-product-alerts>
-    </h3>
+    
 
     }
 </div>
