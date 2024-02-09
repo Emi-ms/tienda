@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CartService } from '../../service/cart.service';
+import { Product } from '../../products';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-top-bar',
@@ -25,11 +27,16 @@ import { CartService } from '../../service/cart.service';
   styleUrl: './top-bar.component.css'
 })
 
-export class TopBarComponent {
+export class TopBarComponent implements OnInit {
+  items:Product[]=[];
 
   constructor(private cartService: CartService) { }
 
-  items = this.cartService.getItems();
+  ngOnInit(): void {
+    this.cartService.getItems().subscribe(x=>this.items = x);
+  }
+
+ 
 
   greet() {
     alert('Welcome to My Store!');

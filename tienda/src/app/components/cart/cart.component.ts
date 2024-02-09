@@ -4,11 +4,12 @@ import { CurrencyPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CurrencyPipe, RouterModule,ReactiveFormsModule],
+  imports: [CurrencyPipe, RouterModule,ReactiveFormsModule,AsyncPipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
@@ -16,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class CartComponent {
 
   items = this.cartService.getItems();
+
+
 
   checkoutForm = this.formBuilder.group({
     name:'',
@@ -29,7 +32,7 @@ export class CartComponent {
 
   
 onSubmit(){
-  this.items = this.cartService.clearCart();
+  this.cartService.clearCart();
   console.warn("Your order has been submitted", this.checkoutForm.value);
   this.checkoutForm.reset();
 }

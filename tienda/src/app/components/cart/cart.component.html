@@ -1,7 +1,7 @@
 <div id="cart-container">
     <h3>Cart</h3>
 
-    @for(item of items; track item.id){
+    @for(item of items|async; track item.id){
     <div class="cart-item">
         <span>{{ item.name }}</span>
         <span>{{ item.price | currency }}</span>

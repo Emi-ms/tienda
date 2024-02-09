@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../products';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Before } from 'v8';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +13,22 @@ export class CartService {
   constructor(private http:HttpClient) { }
 
   items: Product[] = [];
+  itemSubjects:BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>(this.items);
+
 
   addToCart(product: Product) {
     this.items.push(product);
+    this.itemSubjects.next(this.items);
   }
 
   getItems() {
-    return this.items;
+    // return this.items;
+    return this.itemSubjects.asObservable();
   }
 
   clearCart() {
     this.items = [];
+    this.itemSubjects.next(this.items)
     return this.items;
   }
 
