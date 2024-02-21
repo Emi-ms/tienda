@@ -1,21 +1,26 @@
 
 <div id="products-container">
     <h2>Products</h2>
-    <!-- 
-<div *ngFor="let product of products">
-    <h3>{{product.name}}</h3>
+    
+<!-- <div *ngFor="let product of products">
+    <h3 [ngClass]="{'highlight': productBuy.includes(product)}">{{product.name}}</h3>
 </div> -->
 
     @for(product of products; track product.id){
-    <h3>
+    <h3 
+    [ngClass]="{'highlight': productBuy.includes(product)}"
+    >
         <a 
         [title]="product.name + ' details'" 
         [routerLink]="['/products', product.id]">
 
             {{ product.name }}
-        </a></h3>
+        </a>
+    </h3>
         <img id="photo-mobile" src="{{product.photo}}"/>
-
+        @if(productBuy.includes(product)){
+            <p>This product has been bougth</p>
+        }
         @if(product.description){
         <p>{{ product.description }}</p>
         }@else {

@@ -17,8 +17,7 @@ import { AsyncPipe } from '@angular/common';
 export class CartComponent {
 
   items = this.cartService.getItems();
-
-
+  itemsBuy = this.cartService.getItemsBuy();
 
   checkoutForm = this.formBuilder.group({
     name:'',
@@ -32,6 +31,11 @@ export class CartComponent {
 
   
 onSubmit(){
+  
+
+  // console.log(this.itemsBuy);
+  localStorage.setItem('cart', JSON.stringify(this.itemsBuy));
+
   this.cartService.clearCart();
   console.warn("Your order has been submitted", this.checkoutForm.value);
   this.checkoutForm.reset();

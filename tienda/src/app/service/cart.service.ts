@@ -26,6 +26,10 @@ export class CartService {
     return this.itemSubjects.asObservable();
   }
 
+  getItemsBuy() {
+    return this.items;
+  }
+
   clearCart() {
     this.items = [];
     this.itemSubjects.next(this.items)
